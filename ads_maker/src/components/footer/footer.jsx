@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="footer">
-      <h1>all right reserved </h1>
+      <h1> &copy; Ads Maker</h1>
     </div>
   );
 };

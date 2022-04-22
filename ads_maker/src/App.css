@@ -1,13 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
 }
 
+/* header and footer */
 .header {
-  background-color: rgba(0, 0, 0, 0.1);
+  align-items: center;
+  background-color: #00bdfe;
+  box-shadow: 0 2.4px 3.4px rgba(0, 0, 0, 0.1);
+  color: white;
+  display: flex;
   height: 5vh;
+  gap: 65vw;
+  justify-content: space-evenly;
+}
+
+.footer {
+  background-color: #00bdfe;
+  box-shadow: inset 0px 6px 4.4px -3px rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  color: white;
+  position: absolute;
   text-align: center;
+  width: 100%;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+}
+.main_height {
+  /* background-image: url("https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg?auto=compress&cs=tinysrgb&w=1600"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
 }
 
 .button_container {
@@ -15,7 +46,6 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: 40vh;
   gap: 8vw;
 }
 
@@ -24,21 +54,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 190px;
-    gap: 8vh;
+    /* margin-top: 190px; */
   }
 }
 
 .landing_button {
-  background-color: black;
+  background-color: #00bdfe;
   border: none;
   color: white;
   height: 200px;
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
+  margin-top: 30vh;
   width: 200px;
   border-radius: 50%;
 }
+
 .landing_button {
   -webkit-animation: landing_button 1.5s ease-in-out infinite both;
   animation: landing_button 1.5s ease-in-out infinite both;
@@ -78,7 +109,9 @@
   }
 }
 
-@media only screen and (max-with: 768px) .footer {
-  background-color: rgba(0, 0, 0, 0.1);
-  text-align: center;
+@media only screen and (max-with: 768px) {
+  .footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
 }

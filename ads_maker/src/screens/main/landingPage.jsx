@@ -1,4 +1,4 @@
-const Main = () => {
+const LandingPage = () => {
   return (
     <div className="main">
       <div className="button_container">
@@ -6,10 +6,10 @@ const Main = () => {
           <button className="landing_button">Login</button>
         </a>
         <a href="/register">
-          <button className="landing_button">Register</button>
+          <button className="landing_button ">Register</button>
         </a>
       </div>
     </div>
   );
 };
-export default Main;
+export default LandingPage;
