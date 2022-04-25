@@ -1,39 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,200&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto Slab", serif;
 }
 
-/* header and footer */
-.Nav-bar {
+.main-app {
+  box-shadow: 0px 2px rgb(221, 215, 215);
+  color: rgb(105, 99, 99);
   display: flex;
-  gap: 10vh;
-}
-.header {
-  align-items: center;
-  background-color: black;
-  color: white;
-  display: flex;
-  height: 8vh;
-  gap: 65vw;
-  justify-content: space-evenly;
+  font-size: 4em;
+  font-family: "Work Sans", sans-serif;
+  font-weight: lighter;
+  padding: 0.3em 0.6em;
 }
 
-.footer {
-  align-items: center;
-  align-content: center;
-  background-color: black;
-  bottom: 0;
-  color: white;
-  display: flex;
-  justify-content: center;
-  height: 6vh;
-  position: absolute;
-  text-align: center;
-  width: 100%;
+.main-app {
+  width: 52%;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-app {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .logout {
@@ -49,91 +41,21 @@
   min-height: 90vh;
 }
 
-.button_container {
-  align-content: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  gap: 8vw;
-}
-
-@media only screen and (max-width: 768px) {
-  .button_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-.landing_button {
-  background-color: black;
-  border: none;
-  color: white;
-  height: 200px;
-  font-size: 25px;
-  cursor: pointer;
-  margin-top: 30vh;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.landing_button {
-  -webkit-animation: landing_button 1.5s ease-in-out infinite both;
-  animation: landing_button 1.5s ease-in-out infinite both;
-}
-@keyframes landing_button {
-  from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  10% {
-    -webkit-transform: scale(0.91);
-    transform: scale(0.91);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  17% {
-    -webkit-transform: scale(0.98);
-    transform: scale(0.98);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  33% {
-    -webkit-transform: scale(0.87);
-    transform: scale(0.87);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  45% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-}
-
-@media only screen and (max-with: 768px) {
-  .footer {
-    background-color: rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-}
-
 /* MainPage */
 .main_page {
   display: flex;
+  justify-content: center;
   padding: 0.6em 0;
   width: 60%;
 }
 
-.page_heading {
-  font-size: 4em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-  color: rgb(204, 201, 201);
-  padding: 0.3em 0.6em;
+/* Adspage */
+.create_button {
+  background-color: #037971;
+  border: hidden;
+  color: white;
+  font-size: 20px;
+  margin-top: 6px;
+  margin-left: 10px;
+  padding: 10px 10px 10px 10px;
 }

@@ -1,3 +1,5 @@
+import "./landingPage.css";
+
 const LandingPage = () => {
   return (
     <div className="main">

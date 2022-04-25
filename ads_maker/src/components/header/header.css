@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.Nav-bar {
+  display: flex;
+  gap: 10vh;
+}
+
+.header {
+  align-items: center;
+  background-color: #037971;
+  color: white;
+  display: flex;
+  font-family: "Roboto Slab", serif;
+  height: 7vh;
+  gap: 65vw;
+  justify-content: space-evenly;
+}
