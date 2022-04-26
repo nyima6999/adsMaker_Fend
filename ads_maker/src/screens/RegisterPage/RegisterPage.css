@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.name {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.Register-email {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.Register-password {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.Confirm-password {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.login-submit {
+  background-color: #037971;
+  border: hidden;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+  margin-top: 15px;
+  padding: 5px 15px 5px 15px;
+}
+.New-user {
+  margin-top: 15px;
+}
