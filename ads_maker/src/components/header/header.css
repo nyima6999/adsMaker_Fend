@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
-.Nav-bar {
+.nav-bar {
   display: flex;
-  gap: 10vh;
+  gap: 5vw;
 }
 
 .header {
@@ -12,6 +12,36 @@
   display: flex;
   font-family: "Roboto Slab", serif;
   height: 7vh;
-  gap: 65vw;
+  gap: 35vw;
   justify-content: space-evenly;
 }
+
+.logoutHandler {
+  background-color: #037971;
+  border-style: none;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  font-size: 35px;
+}
+
+.adsPage {
+  display: none;
+}
+/* 
+.welcome {
+  -webkit-animation: welcome 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite
+    both;
+  animation: welcome 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite both;
+}
+@keyframes welcome {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+} */

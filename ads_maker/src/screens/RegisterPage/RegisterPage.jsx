@@ -1,10 +1,13 @@
 import React from "react";
 import MainPage from "../../components/MainPage";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./RegisterPage.css";
-import errorMessage from "../../components/errorMessage";
-import axios from "axios";
+import ErrorMessage from "../../components/errorMessage";
+// import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../actions/userActions";
+import { useEffect } from "react";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
@@ -12,44 +15,61 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
   const [message, setMessage] = useState(null);
-  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  // const [error, setError] = useState(false);
   // const [loading, setLoading] = useState(initialState);
+  const dispatch = useDispatch();
+  const userRegister = useSelector((state) => state.userRegister);
+  const { loading, error, userInfo } = userRegister;
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
     if (password !== confirmpassword) {
-      setMessage("Passwords Do Not Match");
+      setMessage("Password do not match");
     } else {
-      setMessage(null);
-      try {
-        const config = {
-          headers: {
-            "Content-type": "application/json",
-          },
-        };
-        // setLoading(true);
-        const { data } = await axios.post(
-          "http://localhost:5000/api/users",
-          {
-            name,
-            email,
-            password,
-          },
-          config
-        );
-        // setLoading(false);
-        localStorage.setItem("userInfo", JSON.stringify(data));
-      } catch (error) {
-        setError(error.response.data.message);
-      }
+      dispatch(register(name, email, password));
     }
+
+    // console.log(email);
+    // if (password !== confirmpassword) {
+    //   setMessage("Passwords Do Not Match");
+    // } else {
+    //   setMessage(null);
+    //   try {
+    //     const config = {
+    //       headers: {
+    //         "Content-type": "application/json",
+    //       },
+    //     };
+    //     // setLoading(true);
+    //     const { data } = await axios.post(
+    //       "http://localhost:5000/api/users",
+    //       {
+    //         name,
+    //         email,
+    //         password,
+    //       },
+    //       config
+    //     );
+
+    //     // setLoading(false);
+    //     localStorage.setItem("userInfo", JSON.stringify(data));
+    //   } catch (error) {
+    //     setError(error.response.data.message);
+    //   }
+    // }
   };
 
   return (
     <MainPage className="Register-forms" title="Register">
       <div className="Register-container">
-        {/* {error && <errorMessage />} */}
-        {message && <errorMessage>{message}</errorMessage>}
+        {message && <ErrorMessage>{message}</ErrorMessage>}
         <form onSubmit={onSubmit}>
           <div className="name">
             <label for="name">Name</label>

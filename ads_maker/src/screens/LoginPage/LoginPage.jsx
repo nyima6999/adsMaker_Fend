@@ -3,46 +3,36 @@ import MainPage from "../../components/MainPage";
 import { Link } from "react-router-dom";
 import "./LoginPage.css";
 import { useState } from "react";
-import axios from "axios";
-import errorMessage from "../../components/errorMessage";
+import ErrorMessage from "../../components/errorMessage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../actions/userActions";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-  // const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/AdsPage");
+    }
+  }, [navigate, userInfo]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
-
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-      // setLoading(true);
-      const { data } = await axios.post(
-        "http://localhost:5000/api/users/login",
-        {
-          email,
-          password,
-        },
-        config
-      );
-      console.log(data);
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      // setLoading(false);
-    } catch (error) {
-      setError(error.response.data.message);
-    }
+    dispatch(login(email, password));
   };
 
   return (
     <MainPage className="Login-forms" title="Login">
       <div className="Login-container">
-        {error && <errorMessage />}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <form onSubmit={onSubmit}>
           <div className="login-email">
             {" "}
